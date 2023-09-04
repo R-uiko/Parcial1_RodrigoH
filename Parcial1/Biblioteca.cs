@@ -83,27 +83,28 @@ public class Biblioteca
     }
 
     private static void MostrarListadoLibros()
-    {
-        if (contadorLibros == 0)
-        {
-            Console.WriteLine("No hay libros registrados en la biblioteca.");
-        }
-        else
-        {
-            //UI
-            Console.WriteLine("Listado de Libros:");
-            Console.WriteLine("--------------------------------------------------------");
-            Console.WriteLine("| Código | Título                | ISBN         | Autor          |");
-            Console.WriteLine("--------------------------------------------------------");
-            for (int i = 0; i < contadorLibros; i++)
-            {
-                Console.WriteLine($"| {codigos[i],-7} | {titulos[i],-22} | {isbns[i],-13} | {autores[i],-15} |");
-            }
-            Console.WriteLine("--------------------------------------------------------");
-        }
-        Console.WriteLine("Presione cualquier tecla para continuar...");
-        Console.ReadKey();
-    }
+ {
+     if (contadorLibros == 0)
+     {
+         Console.WriteLine("No hay libros registrados en la biblioteca.");
+     }
+     else
+     {
+         // UI
+         Console.WriteLine("Listado de Libros:");
+         Console.WriteLine("------------------------------------------------------------------------------");
+         Console.WriteLine("| Código | Título                  | ISBN           | Autor           | Edición |");
+         Console.WriteLine("------------------------------------------------------------------------------");
+         for (int i = 0; i < contadorLibros; i++)
+         {
+             // incluyendo la edición, rayos
+             Console.WriteLine($"| {codigos[i],-7} | {titulos[i],-22} | {isbns[i],-13} | {autores[i],-15} | {ediciones[i],-8} |");
+         }
+         Console.WriteLine("-------------------------------------------------------------------------------");
+     }
+     Console.WriteLine("Presione cualquier tecla para continuar...");
+     Console.ReadKey();
+ }
 
     private static void BuscarLibroPorCodigo()
     {
